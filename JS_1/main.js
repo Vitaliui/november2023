@@ -56,3 +56,9 @@ console.log(typeof b);
 let c = true;
 console.log(typeof c);
 
+let name = prompt('Введіть імя', 'Vitalii');
+let last = prompt('Введіть прізвище', 'Donets');
+let age = +prompt('Введіть вік', 20);
+console.log(typeof age);
+console.log(name, last, age);
+console.log(`My name is ${name} My lastName - ${last} My age is 24`);
