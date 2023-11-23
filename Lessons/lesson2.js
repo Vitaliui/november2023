@@ -96,18 +96,15 @@
 // }
 
 
-let color = 'green';
-let isRoadClear = 'yes';
+let color = 'red';
+let isRoadClear = 'no';
 
-if (color === 'red') {
-    if (isRoadClear === 'yes'){
+if (color === 'green' && isRoadClear === 'yes') {
     console.log('go');
-    }
-} else if (color === 'green' && isRoadClear === 'yes') {
+} else if (color === 'yellow' && isRoadClear === 'yes') {
     console.log('wait');
-} else if (color === 'yellow' && isRoadClear === 'no') {
+} else if (color === 'red' || isRoadClear === 'yes') {
     console.log('stop');
 } else {
     console.log('call to service');
 }
-
