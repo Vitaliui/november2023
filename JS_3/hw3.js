@@ -1,64 +1,73 @@
-// // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
-
+// // // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
+//
 // for (let i = 0; i < 10; i++) {
 //     document.write(`<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, eligendi.</p></div>`);
 // }
-// // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
-
+//
+//
+// // // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
+//
 // for (let i = 1; i < 11; i++) {
-//     document.write(`<div><p>${i}Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>`);
+//     document.write(`<div><p>#${i}Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>`);
 // }
-
-// - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
-
+//
+// // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
+//
 // let i = 0;
-// while (i <= 20) {
+// while (i < 20) {
 //     document.write(`<h1>Lorem ipsum dolor sit amet.</h1>`);
 //     i++;
 // }
-// - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
-
-// let i = 0;
-// while (i < 20) {
-//     document.write(`<h1>${i}Lorem ipsum dolor sit amet.</h1>`);
-//     i++;
+//
+//
+// // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
+//
+// let j = 0;
+// while (j < 20) {
+//     document.write(`<h1>${j}Lorem ipsum dolor sit amet.</h1>`);
+//     j++;
 // }
-
-// - Використовуючи данні з масиву, за допомоги document.write та циклу
-// побудувати структуру по шаблону
-// Масив:
 //
-//     let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+// // - Використовуючи данні з масиву, за допомоги document.write та циклу
+// // побудувати структуру по шаблону
+// // Масив:
+// //
+// //     let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+// //
+// // ШАБЛОН:
+// //     <ul>
+// //         <li>ITEM OF ARRAY</li>
+// //         <!--
+// //             і тд інші об'єкти масиву
+// //              ...
+// //              ...
+// //              ...
+// //         -->
+// //     </ul>
+// //
+// // замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву
 //
-// ШАБЛОН:
-//     <ul>
-//         <li>ITEM OF ARRAY</li>
-//         <!--
-//             і тд інші об'єкти масиву
-//              ...
-//              ...
-//              ...
-//         -->
-//     </ul>
-//
-// замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву
-
 // let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+// //
+// // // document.write(`<ul>`);
+// // // for (let i = 0; i < listOfItems.length; i++) {
+// // //     let listOfItem = listOfItems[i];
+// // //     console.log(listOfItems[i]);
+// // //     document.write(`<li>${listOfItem}</li>`)
+// // // }
+// // // document.write(`</ul>`);
 //
-// // document.write(`<ul>`);
-// // for (let i = 0; i < listOfItems.length; i++) {
-// //     let listOfItem = listOfItems[i];
-// //     console.log(listOfItems[i]);
-// //     document.write(`<li>${listOfItem}</li>`)
-// // }
-// // document.write(`</ul>`);
-
-
-// -----------------------------------------------
+// for (const item of listOfItems) {
+//     document.write(`<li>${item}</li>`)
+// }
 //
-//     Використовуючи данні з масиву, за допомоги document.write та циклу
-// побудувати структуру по шаблону
-// Великими літерами прописанні властивості об'єкту які потрібно впровадити в шаблон
+//
+// // -----------------------------------------------
+// //
+// //     Використовуючи данні з масиву, за допомоги document.write та циклу
+// // побудувати структуру по шаблону
+// // Великими літерами прописанні властивості об'єкту які потрібно впровадити в шаблон
+// //
 //
 
 let products = [
@@ -119,23 +128,110 @@ let users = [
 ];
 // за допомоги циклу вивести:
 //     - користувачів зі статусом true
+for (const user of users) {
+    if (user.status){
+        console.log(user)
+        document.write(`<div>${user.name} - ${user.status}</div>`)
+    }
+}
 // - користувачів зі статусом false
+
+for (const user of users) {
+    if (!user.status) {
+        console.log(user)
+        document.write(`<div>${user.name} - ${user.status}</div>`)
+    }
+}
 // - користувачів які старші за 30 років
 
 for (const user of users) {
-    if (user.status === true){
-        console.log(user);
+    if (user.age > 30) {
+        console.log(user)
+        document.write(`<div>${user.name} - ${user.age}</div>`)
     }
 }
 
-for (const user of users) {
-    if (user.status === false){
-        console.log(user);
-    }
-}
+// for (const user of users) {
+//     if (user.status === true){
+//         console.log(user);
+//     }
+// }
+//
+// for (const user of users) {
+//     if (user.status === false){
+//         console.log(user);
+//     }
+// }
+//
+// for (const user of users) {
+//     if (user.age > 30){
+//         console.log(user);
+//     }
+// }
 
-for (const user of users) {
-    if (user.age > 30){
-        console.log(user);
+
+let booksArr = [
+    {
+        title: 'QWERT',
+        page: 333,
+        genre: ['Fantasy'],
+        author: ['Kolya']
+    },
+    {
+        title: 'QWERTQWT',
+        page: 123,
+        genre: ['Fantasy','SCI-FI'],
+        author: ['Kolya','Petya']
+    },
+    {
+        title: 'ASD',
+        page: 740,
+        genre: ['Classic'],
+        author: ['Yulia','Sveta','Max']
+    },
+    {
+        title: 'QWERTASDQWEEEEEEE',
+        page: 53,
+        genre: ['SCI_FI'],
+        author: ['Petya']
+    }
+];
+// -знайти найбільшу книжку.
+
+let resultBook = booksArr[0];
+for (const book of booksArr) {
+    if (book.page > resultBook.page){
+        resultBook = book;
     }
 }
+console.log(resultBook);
+
+// - знайти книжку/ки з найдовшою назвою
+
+let resultBook1 = booksArr[0];
+for (const book of booksArr) {
+    if (book.title.length > resultBook.title.length){
+        resultBook1 = book;
+    }
+}
+console.log(resultBook1);
+
+// - знайти книжку/ки які писали 2 автори
+let resultBook2 = [];
+for (const book of booksArr) {
+    if (book.author.length === 2){
+        resultBook2[resultBook2.length] = book;
+    }
+}
+console.log(resultBook2);
+
+
+// - знайти книжку/ки які писав 1 автор
+
+let resultBook3 = [];
+for (const book of booksArr) {
+    if (book.author.length === 1){
+        resultBook3[resultBook3.length] = book;
+    }
+}
+console.log(resultBook3);
